@@ -3,7 +3,7 @@ module.exports.handler = async (event) => {
   let responseMessage = 'no params have been sent';
 
   if (event.queryStringParameters && event.queryStringParameters['Name']) {
-    responseMessage = 'The paramater sent was: ' + event.queryStringParameters['Name'];
+    responseMessage = 'The message received was: ' + event.queryStringParameters['Name'];
   }
 
   return {
