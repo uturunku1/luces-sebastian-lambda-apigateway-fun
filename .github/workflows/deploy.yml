@@ -30,7 +30,7 @@ jobs:
         run: |
           echo "base_url for api gateway:"
           terraform output -raw base_url
-          curl "$(terraform output -raw base_url)/params?Name=luces"
+          curl -X GET "$(terraform output -raw base_url)/params?Name=luces"
 
 
 
