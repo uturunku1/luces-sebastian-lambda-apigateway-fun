@@ -1,3 +1,4 @@
+#
 resource "random_pet" "lambda_bucket_name" {
   prefix = "luces-sebastian-functions"
   length = 4
