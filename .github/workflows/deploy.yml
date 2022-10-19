@@ -26,11 +26,13 @@ jobs:
           terraform init
           terraform apply -auto-approve -input=false
 
+      - name: Fetch API GW URL
+        id: url
+        run: terraform output -raw base_url
+
       - name: Test endpoint
         run: |
-          echo "base_url for api gateway:"
-          terraform output -raw base_url
-          curl -X GET "$(terraform output -raw base_url)/params?Name=luces"
+          curl -sSf "${{steps.url.outputs.stdout}}/params?Name=luces"
 
 
 
