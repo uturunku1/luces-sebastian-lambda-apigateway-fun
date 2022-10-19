@@ -9,7 +9,7 @@ jobs:
   deploy:
     name: Deploy API
     runs-on: ubuntu-latest
-    timeout: 10
+    timeout-minutes: 10
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
