@@ -3,7 +3,7 @@ module.exports.handler = async (event) => {
   let responseMessage = 'no params have been sent';
 
   if (event.queryStringParameters && event.queryStringParameters['Name']) {
-    responseMessage = 'Hi: ' + event.queryStringParameters['Name'];
+    responseMessage = 'Hello: ' + event.queryStringParameters['Name'] + ' from Foundational Workflows!';
   }
 
   return {
